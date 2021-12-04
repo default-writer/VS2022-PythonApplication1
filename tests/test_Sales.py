@@ -1,6 +1,6 @@
 import unittest
 
-class Test_test_1(unittest.TestCase):
+class Test_Sales(unittest.TestCase):
     def test_A(self):
         pass
 
