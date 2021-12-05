@@ -1,8 +1,8 @@
 # pylint:disable=unnecessary-pass,wrong-import-position
 """ Tests """
+import unittest
 from datetime import datetime
 from unittest.mock import patch
-import unittest
 
 from src.datetime_service import get_datetime
 

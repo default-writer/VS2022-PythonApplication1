@@ -9,9 +9,11 @@ FROM mcr.microsoft.com/vscode/devcontainers/python:0-${VARIANT}
 # RUN if [ "${NODE_VERSION}" != "none" ]; then su vscode -c "umask 0002 && . /usr/local/share/nvm/nvm.sh && nvm install ${NODE_VERSION} 2>&1"; fi
 
 # [Optional] If your pip requirements rarely change, uncomment this section to add them to the image.
-# COPY requirements.txt /tmp/pip-tmp/
-# RUN pip3 --disable-pip-version-check --no-cache-dir install -r /tmp/pip-tmp/requirements.txt \
-#    && rm -rf /tmp/pip-tmp
+RUN python3 -m pip install --upgrade pip
+COPY ./requirements.txt /tmp/pip-tmp/
+COPY ./bin/build_requirements.txt /tmp/pip-tmp/bin/
+RUN pip3 --disable-pip-version-check --no-cache-dir install -r /tmp/pip-tmp/bin/build_requirements.txt \
+   && rm -rf /tmp/pip-tmp
 
 # [Optional] Uncomment this section to install additional OS packages.
 # RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
@@ -23,14 +25,6 @@ FROM mcr.microsoft.com/vscode/devcontainers/python:0-${VARIANT}
 # [Optional] User venv mode initialization
 # RUN wget -q https://dotnet.microsoft.com/download/dotnet/scripts/v1/dotnet-install.sh
 # RUN ./dotnet-install.sh --channel LTS
-
-# Python update
-RUN python3 -m pip install --upgrade pip
-
-# Install build requirements
-COPY ./requirements.txt ./requirements.txt
-COPY ./bin/build_requirements.txt ./bin/build_requirements.txt
-RUN pip3 install -r ./bin/build_requirements.txt
 
 # PowerShell 7.2.0
 RUN wget https://github.com/PowerShell/PowerShell/releases/download/v7.2.0/powershell-lts_7.2.0-1.deb_amd64.deb -O /tmp/powershell_7.2.0-1.deb_amd64.deb
