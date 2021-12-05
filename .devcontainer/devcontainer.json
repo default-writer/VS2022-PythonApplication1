@@ -33,9 +33,9 @@
 
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
+        "runarsf.platform-settings",
 		"ms-python.python",
 		"ms-python.vscode-pylance",
-        "runarsf.platform-settings"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.

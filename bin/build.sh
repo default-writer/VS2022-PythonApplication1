@@ -3,8 +3,8 @@ set -e
 
 cd "${0%/*}/.."
 
-sudo apt-get update && apt-get upgrade -y && apt-get install virtualenv -y
-
+apt-get update && apt-get upgrade -y && apt-get install virtualenv -y
+rm -rf venv
 virtualenv venv
 
 . venv/bin/activate

@@ -21,15 +21,16 @@ FROM mcr.microsoft.com/vscode/devcontainers/python:0-${VARIANT}
 # RUN su vscode -c "source /usr/local/share/nvm/nvm.sh && npm install -g <your-package-here>" 2>&1
 
 # [Optional] User venv mode initialization
-WORKDIR /app
-COPY ./bin /app/bin
-COPY ./src /app/src
-COPY ./requirements.txt /app/requirements.txt
-RUN chmod +x /app/bin/build.sh && /app/bin/build.sh
-
 # RUN wget -q https://dotnet.microsoft.com/download/dotnet/scripts/v1/dotnet-install.sh
 # RUN ./dotnet-install.sh --channel LTS
 
+# PowerShell 7.2.0
 RUN wget https://github.com/PowerShell/PowerShell/releases/download/v7.2.0/powershell-lts_7.2.0-1.deb_amd64.deb -O /tmp/powershell_7.2.0-1.deb_amd64.deb
 RUN dpkg -i /tmp/powershell_7.2.0-1.deb_amd64.deb
 RUN apt-get install -f
+
+# WORKDIR /app # WORKDIR /workspaces/${workspaceFolder}
+COPY ./bin ./bin
+COPY ./src ./src
+COPY ./requirements.txt ./requirements.txt
+RUN chmod +x ./bin/build.sh && ./bin/build.sh

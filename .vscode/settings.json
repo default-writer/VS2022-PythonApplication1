@@ -14,7 +14,13 @@
             "java.home": "C:\\Program Files\\Microsoft\\jdk-11.0.12.7-hotspot"
         },
         "linux": {
+            "inherits": "default"
         }
     },
-    "editor.useTabStops": false
+    "editor.useTabStops": false,
+    "python.testing.pytestArgs": [
+        "tests"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true
 }
