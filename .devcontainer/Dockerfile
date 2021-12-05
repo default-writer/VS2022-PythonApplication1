@@ -24,13 +24,15 @@ FROM mcr.microsoft.com/vscode/devcontainers/python:0-${VARIANT}
 # RUN wget -q https://dotnet.microsoft.com/download/dotnet/scripts/v1/dotnet-install.sh
 # RUN ./dotnet-install.sh --channel LTS
 
+# Python update 
+RUN python3 -m pip install --upgrade pip
+
+# Install build requirements
+COPY ./requirements.txt ./requirements.txt
+COPY ./bin/build_requirements.txt ./bin/build_requirements.txt
+RUN pip3 install -r ./bin/build_requirements.txt
+
 # PowerShell 7.2.0
 RUN wget https://github.com/PowerShell/PowerShell/releases/download/v7.2.0/powershell-lts_7.2.0-1.deb_amd64.deb -O /tmp/powershell_7.2.0-1.deb_amd64.deb
 RUN dpkg -i /tmp/powershell_7.2.0-1.deb_amd64.deb
 RUN apt-get install -f
-
-# WORKDIR /app # WORKDIR /workspaces/${workspaceFolder}
-COPY ./bin ./bin
-COPY ./src ./src
-COPY ./requirements.txt ./requirements.txt
-RUN chmod +x ./bin/build.sh && ./bin/build.sh
