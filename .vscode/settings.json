@@ -27,5 +27,6 @@
     "python.testing.pytestEnabled": true,
     "python.analysis.extraPaths": [
         "../src"
-    ]
+    ],
+    "coverage-gutters.coverageReportFileName": "./bin/coverage/**/index.html"
 }
