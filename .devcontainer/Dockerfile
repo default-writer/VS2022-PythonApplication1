@@ -24,7 +24,7 @@ FROM mcr.microsoft.com/vscode/devcontainers/python:0-${VARIANT}
 # RUN wget -q https://dotnet.microsoft.com/download/dotnet/scripts/v1/dotnet-install.sh
 # RUN ./dotnet-install.sh --channel LTS
 
-# Python update 
+# Python update
 RUN python3 -m pip install --upgrade pip
 
 # Install build requirements
