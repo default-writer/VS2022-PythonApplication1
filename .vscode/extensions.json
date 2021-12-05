@@ -61,7 +61,6 @@
         "ms-dotnettools.csharp",
         "ms-dotnettools.vscode-dotnet-runtime",
         "ms-mssql.mssql",
-        "ms-python.python",
         "ms-toolsai.jupyter",
         "ms-vscode-remote.remote-containers",
         "ms-vscode-remote.remote-ssh",

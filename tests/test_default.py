@@ -1,23 +1,33 @@
 # pylint:disable=unnecessary-pass
 """ Tests """
+
+import sys
+
+sys.path.insert(0, "./src")
+
 from datetime import datetime
+from unittest.mock import patch
 import unittest
-import pytest
 
-from main import get_datetime
+from datetime_service import get_datetime
 
-@pytest.mark.freeze_time("2021-01-01 00:00:00")
-def test_get_datetime():
-    """ Method test """
-    expected = datetime.strptime("2021-01-01 00:00:00", '%Y-%m-%d %H:%M:%S')
+
+@patch("datetime_service.datetime")
+def test_get_datetime(mock_datetime):
+    """Method test"""
+    expected = datetime.strptime("2021-01-01 00:00:00", "%Y-%m-%d %H:%M:%S")
+    mock_datetime.now = lambda: expected
     actual = get_datetime()
     assert actual == expected
 
+
 class TestDefault(unittest.TestCase):
-    """ Default methods tests """
+    """Default methods tests"""
+
     def test_get_datetime(self):
-        """ Method test """
+        """Method test"""
         pass
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     unittest.main()

@@ -1,9 +1,4 @@
-from datetime import datetime
-
-
-def get_datetime():
-    return datetime.now()
-
+from datetime_service import get_datetime
 
 if __name__ == "__main__":
     print(f"Hello, World! {get_datetime()}")

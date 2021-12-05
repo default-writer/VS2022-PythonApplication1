@@ -3,4 +3,5 @@ set -e
 
 cd "${0%/*}/.."
 
+black ./tests
 black ./src
