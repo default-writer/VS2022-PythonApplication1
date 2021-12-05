@@ -33,7 +33,7 @@
 
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
-        "runarsf.platform-settings",
+		"runarsf.platform-settings",
 		"ms-python.python",
 		"ms-python.vscode-pylance",
 		"eamodio.gitlens",
@@ -43,7 +43,11 @@
 		"codezombiech.gitignore",
 		"littlefoxteam.vscode-python-test-adapter",
 		"hbenl.vscode-test-explorer",
-		"hbenl.vscode-test-explorer-liveshare"
+		"hbenl.vscode-test-explorer-liveshare",
+		"Gruntfuggly.todo-tree",
+		"alefragnani.Bookmarks",
+		"alefragnani.bookmarks",
+		"uyiosa-enabulele.reopenclosedtab"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
