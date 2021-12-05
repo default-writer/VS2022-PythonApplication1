@@ -1,4 +1,16 @@
+[coverage:run]
+source = src
+plugins =
+    coverage_conditional_plugin
+omit = *tests*
+
+[coverage:coverage_conditional_plugin]
+rules =
+    "sys_version_info >= (3, 8)": py-gte-38
+    "is_installed('mypy')": has-mypy
+
 [report]
 show_missing = True
 omit =
     if __name__ == "__main__":
+    src/main.py

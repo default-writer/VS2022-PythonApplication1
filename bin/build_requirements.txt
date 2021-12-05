@@ -26,3 +26,4 @@ attrs==21.2.0
 wheel==0.33.6
 sqlparse==0.4.1
 black==21.11b1
+coverage_conditional_plugin==0.4.0

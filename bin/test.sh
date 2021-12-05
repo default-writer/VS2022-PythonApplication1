@@ -4,11 +4,14 @@ set -e
 cd "${0%/*}/.."
 
 SRC="$PWD/src"
-TESTS="$PWD/bin/pytest"
+TESTS="$PWD/tests"
+PYTEST="$PWD/bin/pytest"
 COVERAGE="$PWD/bin/coverage"
 
 echo "Running pytest"
-pytest -s -v "$SRC" --cov="$SRC" --junit-xml="$TESTS/test_results.xml" --cov-report term-missing:skip-covered
+
+pytest -s -v "$TESTS" --cov="$SRC" --junit-xml="$PYTEST/test_results.xml" --cov-report term-missing:skip-covered
+coverage report -m
 
 coverage xml
 coverage html -d "$COVERAGE"
