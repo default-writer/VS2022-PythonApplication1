@@ -4,9 +4,6 @@ from datetime import datetime
 from unittest.mock import patch
 import unittest
 
-# TODO: remove if no errors
-# import sys
-# sys.path.append(0, "./src") -- inapropriate, moved to pylintrc
 from src.datetime_service import get_datetime
 
 

@@ -47,7 +47,21 @@
 		"Gruntfuggly.todo-tree",
 		"alefragnani.Bookmarks",
 		"alefragnani.bookmarks",
-		"uyiosa-enabulele.reopenclosedtab"
+		"uyiosa-enabulele.reopenclosedtab",
+		"mikestead.dotenv",
+		"ibm.output-colorizer",
+		"ms-toolsai.jupyter",
+		"ms-toolsai.jupyter-renderers",
+		"ms-vscode.test-adapter-converter",
+		"gruntfuggly.todo-tree",
+		"ms-toolsai.jupyter-keymap",
+		"formulahendry.code-runner",
+		"streetsidesoftware.code-spell-checker",
+		"codestream.codestream",
+		"vsls-contrib.codetour",
+		"ryanluker.vscode-coverage-gutters",
+		"svipas.control-snippets",
+		"sabitovvt.favorites-panel"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
