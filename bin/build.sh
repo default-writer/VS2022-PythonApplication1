@@ -3,12 +3,12 @@ set -e
 
 cd "${0%/*}/.."
 
-apt-get update && apt-get upgrade -y && apt-get install virtualenv -y
+apt-get update && apt-get upgrade -y && apt-get install -y python3-venv
 rm -rf venv
-virtualenv venv
+python3 -m venv venv
 
 . venv/bin/activate
 
 python3 -m pip install --upgrade pip
 
-pip install -r $PWD/bin/build_requirements.txt #  1> /dev/null
+pip3 install -r $PWD/bin/build_requirements.txt
