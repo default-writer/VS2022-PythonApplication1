@@ -1,7 +1,20 @@
 {
-    "python.testing.pytestArgs": [
-        "tests"
-    ],
-    "python.testing.unittestEnabled": false,
-    "python.testing.pytestEnabled": true
+    "platformSettings.autoLoad": true,
+    "platformSettings.condition": "os.release()",
+    "platformSettings.platforms": {
+        "default": {
+            "python.testing.pytestArgs": [
+                "tests"
+            ],
+            "python.testing.unittestEnabled": false,
+            "python.testing.pytestEnabled": true,
+        },
+        "win32": {
+            "inherits": "default",
+            "java.home": "C:\\Program Files\\Microsoft\\jdk-11.0.12.7-hotspot"
+        },
+        "linux": {
+        }
+    },
+    "editor.useTabStops": false
 }
