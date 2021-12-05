@@ -1,18 +1,16 @@
-# pylint:disable=unnecessary-pass
+# pylint:disable=unnecessary-pass,wrong-import-position
 """ Tests """
-
-import sys
-
-sys.path.insert(0, "./src")
-
 from datetime import datetime
 from unittest.mock import patch
 import unittest
 
-from datetime_service import get_datetime
+# TODO: remove if no errors
+# import sys
+# sys.path.append(0, "./src") -- inapropriate, moved to pylintrc
+from src.datetime_service import get_datetime
 
 
-@patch("datetime_service.datetime")
+@patch("src.datetime_service.datetime")
 def test_get_datetime(mock_datetime):
     """Method test"""
     expected = datetime.strptime("2021-01-01 00:00:00", "%Y-%m-%d %H:%M:%S")
