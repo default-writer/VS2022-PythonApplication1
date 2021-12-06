@@ -62,6 +62,7 @@
         "ms-dotnettools.vscode-dotnet-runtime",
         "ms-mssql.mssql",
         "ms-toolsai.jupyter",
+        "VisualStudioExptTeam.vscodeintellicode",
         "ms-vscode-remote.remote-containers",
         "ms-vscode-remote.remote-ssh",
         "ms-vscode-remote.remote-ssh-edit",
