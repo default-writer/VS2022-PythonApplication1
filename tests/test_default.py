@@ -4,10 +4,10 @@ import unittest
 from datetime import datetime
 from unittest.mock import patch
 
-from src.datetime_service import get_datetime
+from datetime_service import get_datetime
 
 
-@patch("src.datetime_service.datetime")
+@patch("datetime_service.datetime")
 def test_get_datetime(mock_datetime):
     """Method test"""
     expected = datetime.strptime("2021-01-01 00:00:00", "%Y-%m-%d %H:%M:%S")
