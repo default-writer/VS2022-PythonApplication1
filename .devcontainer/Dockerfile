@@ -30,3 +30,7 @@ RUN pip3 --disable-pip-version-check --no-cache-dir install -r /tmp/pip-tmp/bin/
 RUN wget https://github.com/PowerShell/PowerShell/releases/download/v7.2.0/powershell-lts_7.2.0-1.deb_amd64.deb -O /tmp/powershell_7.2.0-1.deb_amd64.deb
 RUN dpkg -i /tmp/powershell_7.2.0-1.deb_amd64.deb
 RUN apt-get install -f
+
+# .NET SDK
+RUN wget https://dotnet.microsoft.com/download/dotnet/scripts/v1/dotnet-install.sh -O /tmp/dotnet-install.sh
+RUN chmod +x /tmp/dotnet-install.sh && /tmp/dotnet-install.sh
