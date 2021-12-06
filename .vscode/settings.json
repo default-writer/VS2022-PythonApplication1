@@ -1,6 +1,6 @@
 {
     "python.defaultInterpreterPath": "${workspaceFolder}/venv/bin/python3",
-    "python.linting.pylintEnabled": true,
+    "python.linting.pylintEnabled": false,
     "platformSettings.autoLoad": true,
     "platformSettings.condition": "os.release()",
     "platformSettings.platforms": {
@@ -27,6 +27,5 @@
     "python.testing.pytestEnabled": true,
     "python.analysis.extraPaths": [
         "../src"
-    ],
-    "coverage-gutters.coverageReportFileName": "./bin/coverage/**/index.html"
+    ]
 }
