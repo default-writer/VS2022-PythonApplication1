@@ -33,4 +33,6 @@ RUN apt-get install -f
 
 # .NET SDK
 RUN wget https://dotnet.microsoft.com/download/dotnet/scripts/v1/dotnet-install.sh -O /tmp/dotnet-install.sh
-RUN chmod +x /tmp/dotnet-install.sh && /tmp/dotnet-install.sh
+RUN chmod +x /tmp/dotnet-install.sh; su vscode -c "sh -c /tmp/dotnet-install.sh"
+
+ENV PATH="/home/vscode/.dotnet:${PATH}"
