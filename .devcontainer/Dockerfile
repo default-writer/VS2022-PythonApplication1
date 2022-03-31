@@ -35,4 +35,8 @@ RUN apt-get install -f
 RUN wget https://dotnet.microsoft.com/download/dotnet/scripts/v1/dotnet-install.sh -O /tmp/dotnet-install.sh
 RUN chmod +x /tmp/dotnet-install.sh; su vscode -c "sh -c /tmp/dotnet-install.sh"
 
+RUN apt-get -y update
+RUN apt-get -y upgrade
+RUN apt install -y apt-transport-https ca-certificates wget dirmngr gnupg software-properties-common openjdk-11-jre
+
 ENV PATH="/home/vscode/.dotnet:${PATH}"
