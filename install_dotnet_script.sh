@@ -10,9 +10,9 @@ set -e
 # Shell
 #wget https://dot.net/v1/dotnet-install.sh && chmod +x ./dotnet-install.sh && sudo ./dotnet-install.sh
 
-export PATH=$PATH:$HOME/.dotnet
-export DOTNET_ROOT=$HOME/.dotnet
-export PATH=$PATH:$DOTNET_ROOT
+export PATH="$PATH:$HOME/.dotnet"
+export DOTNET_ROOT="$HOME/.dotnet"
+export PATH="$PATH:$DOTNET_ROOT"
 
 [ -f $DOTNET_ROOT/tools/dotnet-script ] && dotnet tool uninstall dotnet-script -g || echo ERROR
 dotnet tool install dotnet-script -g
