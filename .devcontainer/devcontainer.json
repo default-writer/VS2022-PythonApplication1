@@ -69,7 +69,6 @@
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	"postCreateCommand": [
-		"./install_dotnet_script.sh",
 		"pip3 install --user -r ./bin/build_requirements.txt"
 	],
 
